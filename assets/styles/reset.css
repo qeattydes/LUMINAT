@@ -1,0 +1,422 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+em,
+img,
+strong,
+ol,
+ul,
+li,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    color: inherit;
+    font-family: 'Futura PT';
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    outline: none;
+    font: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+:root {
+    --font-size-header: 8rem;
+    --font-size-xxl: 4.5rem;
+    --font-size-xl: 4rem;
+    --font-size-lg: 3rem;
+    --font-size-md: 2.5rem;
+    --font-size-sm: 2.25rem;
+    --font-size-base: 1.25rem;
+    --font-size-caption: 1rem;
+
+    --color-green: #40423D;
+    --color-bwhite: #FFFEF7 !important;
+    --color-beige: #DED6C8;
+    --color-gray: #D0D0D0;
+    --color-dark-red: #580201;
+    --color-light-red: #A71103;
+    --color-greyge: #BFBDAE;
+
+    --bw-1: #111111;
+    --bw-3: #333333;
+    --bw-7: #777777;
+    --bw-9: #999999;
+    --bw-ec: #ECECEC;
+
+    --spacing-8: 0.5rem;
+    --spacing-12: 0.75rem;
+    --spacing-16: 1rem;
+    --spacing-20: 1.25rem;
+    --spacing-24: 1.5rem;
+    --spacing-32: 2rem;
+    --spacing-40: 2.5rem;
+    --spacing-48: 3rem;
+    --spacing-60: 3.75rem;
+    --spacing-72: 4.5rem;
+    --spacing-94: 5.875rem;
+    --spacing-120: 7.5rem;
+    --spacing-146: 9.125rem;
+
+}
+
+h1 {
+    font-size: var(--font-size-header);
+}
+
+h2 {
+    font-size: var(--font-size-xxl) !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+.h2-italic {
+    font-size: var(--font-size-xxl) !important;
+    font-weight: 100 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-lg) !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+h5 {
+    font-size: var(--font-size-md);
+}
+
+h6 {
+    font-size: var(--font-size-sm) !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 100%;
+    font-weight: 400;
+    margin-bottom: 0 !important;
+}
+
+.caption {
+    font-size: var(--font-size-caption);
+    line-height: 110% !important;
+    margin-bottom: 0 !important;
+}
+
+.caption-bold {
+    font-size: var(--font-size-caption);
+    line-height: 110% !important;
+    margin-bottom: 0 !important;
+    font-weight: 500;
+}
+
+
+html {
+    color: var(--color-2);
+    scroll-behavior: smooth;
+}
+
+.bg-green {
+    background-color: var(--color-green);
+}
+
+.bg-bwhite {
+    background-color: var(--color-bwhite);
+}
+
+.bg-beige {
+    background-color: var(--color-beige);
+}
+
+.bg-gray {
+    background-color: var(--color-gray);
+}
+
+.bg-dark-red {
+    background-color: var(--color-dark-red);
+}
+
+.bg-light-red {
+    background-color: var(--color-light-red);
+}
+
+.bg-greyge {
+    background-color: var(--color-greyge);
+}
+
+.bg-bw-1 {
+    background-color: var(--bw-1);
+}
+
+.bg-bw-3 {
+    background-color: var(--bw-3);
+}
+
+.bg-bw-7 {
+    background-color: var(--bw-7);
+}
+
+.bg-bw-9 {
+    background-color: var(--bw-9);
+}
+
+.bg-bw-ec {
+    background-color: var(--bw-ec);
+}
+
+.border-green {
+    border-color: var(--color-green);
+}
+
+.border-white {
+    border-color: var(--color-white);
+}
+
+.border-beige {
+    border-color: var(--color-beige);
+}
+
+.border-gray {
+    border-color: var(--color-gray);
+}
+
+.border-dark-red {
+    border-color: var(--color-dark-red);
+}
+
+.border-light-red {
+    border-color: var(--color-light-red);
+}
+
+.border-greyge {
+    border-color: var(--color-greyge);
+}
+
+.border-bw-1 {
+    border-color: var(--bw-1);
+}
+
+.border-bw-3 {
+    border-color: var(--bw-3);
+}
+
+.border-bw-7 {
+    border-color: var(--bw-7);
+}
+
+.border-bw-9 {
+    border-color: var(--bw-9);
+}
+
+.border-bw-ec {
+    border-color: var(--bw-ec);
+}
+
+.text-green {
+    color: var(--color-green);
+}
+
+.text-white {
+    color: var(--color-bwhite);
+}
+
+.text-beige {
+    color: var(--color-beige);
+}
+
+.text-gray {
+    color: var(--color-gray);
+}
+
+.text-dark-red {
+    color: var(--color-dark-red);
+}
+
+.text-light-red {
+    color: var(--color-light-red);
+}
+
+.text-greyge {
+    color: var(--color-greyge);
+}
+
+.text-bw-1 {
+    color: var(--bw-1);
+}
+
+.text-bw-3 {
+    color: var(--bw-3);
+}
+
+.text-bw-7 {
+    color: var(--bw-7);
+}
+
+.text-bw-9 {
+    color: var(--bw-9);
+}
+
+.text-bw-ec {
+    color: var(--bw-ec);
+}
+
+.h-gradient {
+    background: linear-gradient(180deg, rgba(64, 66, 61, 1) 0%, rgba(163, 168, 155, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.responsive-img-3-4 {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    /* или 16 / 9, 1 / 1 и т.п. */
+    object-fit: cover;
+    /* или contain, если нужно видеть всё изображение */
+    display: block;
+}
+
+.responsive-img-4-3 {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    /* или 16 / 9, 1 / 1 и т.п. */
+    object-fit: cover;
+    /* или contain, если нужно видеть всё изображение */
+    display: block;
+}
+
+.responsive-img-9-16 {
+    width: 100%;
+    aspect-ratio: 9 / 16;
+    /* или 16 / 9, 1 / 1 и т.п. */
+    object-fit: cover;
+    /* или contain, если нужно видеть всё изображение */
+    display: block;
+}
+
+.responsive-img-1-1 {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* или 16 / 9, 1 / 1 и т.п. */
+    object-fit: cover;
+    /* или contain, если нужно видеть всё изображение */
+    display: block;
+}
+
+.collection-card {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    cursor: pointer;
+}
+
+.collection-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Заливка */
+.collection-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(64, 66, 61, 0.3);
+    /* #40423D с 30% прозрачностью */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Текст */
+.collection-card a {
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--color-bwhite, #FFFEF7);
+    font-size: var(--font-size-sm, 1rem);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin: 0;
+    pointer-events: none;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.collection-card:hover::after,
+.collection-card:hover a {
+    opacity: 1;
+    pointer-events: auto;
+}

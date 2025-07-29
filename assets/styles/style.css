@@ -1,0 +1,33 @@
+/* .background-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+} */
+
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+section.welcome{
+    height: 50rem;
+}
+
+section.welcome .container-fluid,
+section.welcome .row,
+section.welcome .col-6 {
+  height: 100%;
+}
+
+section.about .star{
+  width: 1rem;
+}
+
+

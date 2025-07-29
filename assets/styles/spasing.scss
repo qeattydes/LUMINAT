@@ -1,0 +1,52 @@
+// spacing.scss
+
+$spacings: (
+  8: 0.5rem,
+  12: 0.75rem,
+  16: 1rem,
+  20: 1.25rem,
+  24: 1.5rem,
+  32: 2rem,
+  40: 2.5rem,
+  48: 3rem,
+  60: 3.75rem,
+  72: 4.5rem,
+  94: 5.875rem,
+  120: 7.5rem,
+  146: 9.125rem
+);
+
+@each $key, $value in $spacings {
+  // Margin
+  .m-#{$key} { margin: $value; }
+  .mt-#{$key} { margin-top: $value; }
+  .mr-#{$key} { margin-right: $value; }
+  .mb-#{$key} { margin-bottom: $value; }
+  .ml-#{$key} { margin-left: $value; }
+  .mx-#{$key} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .my-#{$key} {
+    margin-top: $value;
+    margin-bottom: $value;
+  }
+
+  // Padding
+  .p-#{$key} { padding: $value; }
+  .pt-#{$key} { padding-top: $value; }
+  .pr-#{$key} { padding-right: $value; }
+  .pb-#{$key} { padding-bottom: $value; }
+  .pl-#{$key} { padding-left: $value; }
+  .px-#{$key} {
+    padding-left: $value;
+    padding-right: $value;
+  }
+  .py-#{$key} {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+
+  // Gap
+  .gap-#{$key} { gap: $value; }
+}

@@ -1,0 +1,115 @@
+/* Futura PT Light */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+/* Futura PT Book (обычный) */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Book.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Futura PT Medium */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* Futura PT Demi */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Demi.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Futura PT Bold */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Futura PT ExtraBold */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+/* Futura PT Heavy */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-Heavy.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* Futura PT Book Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-BookObl.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Futura PT Medium Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-MediumObl.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+/* Futura PT Demi Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-DemiObl.ttf') format('truetype');
+    font-weight: 600;
+    font-style: italic;
+}
+
+/* Futura PT Bold Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-BoldObl.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Futura PT ExtraBold Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-ExtraBoldObl.ttf') format('truetype');
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* Futura PT Heavy Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../assets/fonts/FuturaPT-HeavyObl.ttf') format('truetype');
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Простой текст */
+p {
+  font-family: 'Futura PT', sans-serif;
+  font-weight: 400;
+}
+
+/* Курсив */
+.italic {
+  font-style: italic;
+  font-weight: 200 !important;
+}
