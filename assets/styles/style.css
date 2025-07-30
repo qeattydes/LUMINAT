@@ -16,8 +16,8 @@
   z-index: 0;
 }
 
-section.welcome{
-    height: 50rem;
+section.welcome {
+  height: 50rem;
 }
 
 section.welcome .container-fluid,
@@ -26,8 +26,7 @@ section.welcome .col-6 {
   height: 100%;
 }
 
-section.about .star{
+section.about .star {
   width: 1rem;
 }
-
 
