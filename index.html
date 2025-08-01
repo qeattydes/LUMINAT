@@ -851,13 +851,15 @@
 
                 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-                const smoother = ScrollSmoother.create({
+                let smootherInstance = ScrollSmoother.create({
                     wrapper: "#smooth-wrapper",
                     content: "#smooth-content",
                     smooth: 1.5, // Скорость скролла (1 - нормально, 2 - плавнее)
                     effects: true, // Включаем параллакс-эффекты
                     normalizeScroll: true // Фикс для тачпадов
                 });
+                smoother = smootherInstance;
+
 
                 // Обновляем при загрузке изображений
                 window.addEventListener('load', () => {
@@ -873,6 +875,20 @@
             let isProjectsActive = false;
             let isScrolling = false;
             let currentProject = 0;
+
+            let smoother;
+            let bodyOverflowPrev;
+
+            function lockScroll() {
+                 if (smoother) smoother.smooth = 0;
+                bodyOverflowPrev = document.body.style.overflow;
+                document.body.style.overflow = 'hidden';
+            }
+
+            function unlockScroll() {
+                 if (smoother) smoother.smooth = 1.5;
+                document.body.style.overflow = bodyOverflowPrev || '';
+            }
 
             // Инициализация проектов
             if (projectItems.length > 0) {
@@ -909,7 +925,7 @@
                             resetProjects();
                         }
                     });
-                }, { threshold: 0.5 });
+                }, { threshold: 0.9 });
 
                 sectionObserver.observe(projectsSection);
             }
@@ -962,12 +978,15 @@
 
                     e.preventDefault();
                     isScrolling = true;
+                    lockScroll();
+
 
                     const nextProject = delta > 0 ? currentProject : currentProject - 2;
                     activateProject(nextProject);
 
                     setTimeout(() => {
                         isScrolling = false;
+                        unlockScroll();
                     }, 1000);
                 }, { passive: false });
 
@@ -985,6 +1004,7 @@
                     if (Math.abs(deltaY) > 50) {
                         e.preventDefault();
                         isScrolling = true;
+                        lockScroll();
 
                         const nextProject = deltaY > 0 ? currentProject : currentProject - 2;
 
@@ -997,6 +1017,7 @@
 
                         setTimeout(() => {
                             isScrolling = false;
+                            unlockScroll();
                         }, 1000);
                     }
                 }, { passive: false });
