@@ -6,18 +6,58 @@
   z-index: -1;
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* Стили для шапки */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(0);
+}
+
+/* Прозрачная шапка на welcome */
+.header-transparent {
+  background-color: transparent;
+  border-bottom-color: transparent;
+}
+
+/* Шапка с фоном при скролле */
+.header-solid {
+  background-color: var(--color-bwhite);
+  border-bottom-color: var(--color-green);
+  color: var(--color-green);
+}
+
+/* Скрытая шапка при скролле вниз */
+.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Корректировка секции welcome */
+section.welcome {
+  padding-top: 0;
+  margin-top: -70px;
+  /* Компенсируем фиксированную шапку */
+}
+
 .background-video {
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   object-fit: cover;
   z-index: 0;
 }
 
 section.welcome {
-  height: 50rem;
+  height: 100vh;
 }
 
 section.welcome .container-fluid,
@@ -30,3 +70,421 @@ section.about .star {
   width: 1rem;
 }
 
+/* Обновленные стили для секции проектов */
+.projects-scroll-container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects-images {
+  width: 50%;
+  height: 100vh;
+  position: relative;
+}
+
+.project-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+
+
+}
+
+.project-item.active {
+  transform: translateY(0);
+  z-index: 2;
+}
+
+.project-item.past {
+  transform: translateY(-100%);
+}
+
+.project-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-description {
+  width: 50%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--color-bwhite);
+  padding: 40px;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-description::-webkit-scrollbar {
+  display: none;
+}
+
+.fixed-header {
+  position: sticky;
+  top: 0;
+  background: var(--color-bwhite);
+  z-index: 10;
+  padding-bottom: 40px;
+}
+
+/* Анимация появления контента */
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 768px) {
+  .projects-scroll-container {
+    flex-direction: column;
+  }
+
+  .projects-images,
+  .project-description {
+    width: 100%;
+    height: auto;
+  }
+
+  .project-item {
+    height: 60vh;
+  }
+
+  .project-description {
+    height: 40vh;
+    position: relative;
+  }
+
+  .fixed-header {
+    position: relative;
+    padding-bottom: 20px;
+  }
+}
+
+/* Параллакс эффект для изображений */
+.project-image-wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.project-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  /* Начальный масштаб для эффекта параллакса */
+  transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.project-item.active img {
+  transform: scale(1);
+}
+
+/* Анимация исчезновения для описания */
+.fade-out {
+  animation: fadeOut 0.5s ease-out forwards;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* Улучшенная анимация появления */
+.fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Параллакс при скролле */
+.projects-images {
+  perspective: 1000px;
+}
+
+.project-item {
+  transform-style: preserve-3d;
+}
+
+
+
+section.idea .items {
+  height: 80vh;
+}
+
+.bg-image-block {
+  position: relative;
+  overflow: hidden;
+  /* Обрезаем все, что выходит за границы */
+}
+
+.bg-image-block::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/images/art-2.jpg');
+  background-size: cover;
+  /* Заполняем блок полностью */
+  background-position: center;
+  /* Центрируем изображение */
+  background-repeat: no-repeat;
+  z-index: -1;
+  /* Помещаем под контент */
+}
+
+/* Если нужно затемнение фона для лучшей читаемости текста */
+.bg-image-block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
+  /* Полупрозрачный черный */
+  z-index: -1;
+}
+
+/* Стили для контента поверх фона */
+.bg-image-block .desc,
+.bg-image-block p {
+  position: relative;
+  z-index: 1;
+  /* Поднимаем текст над фоном */
+  color: var(--color-bwhite);
+  /* Белый текст для контраста */
+}
+
+/* Опционально: адаптация высоты блока */
+.bg-image-block {
+  min-height: 500px;
+  /* Или нужная вам высота */
+
+}
+
+section.cooperation .container-32 {
+  height: 60vh;
+}
+
+section.cooperation .btn-link-green {
+  width: 19rem;
+}
+
+.cooperation .col-6.team {
+  background-image: url('/assets/images/team-2.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+
+section.faq .questions .q-1 {
+  border-bottom: 1px solid var(--color-green);
+
+}
+
+section.faq .questions .q img {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+section.faq .questions .q.active img {
+  transform: rotate(45deg);
+}
+
+section.faq .questions .answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+section.faq .questions .q.active+.answer {
+  max-height: 300px !important;
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+}
+
+section.faq .q {
+  cursor: pointer;
+
+}
+
+section.faq .answer p {
+  opacity: 0;
+  transition: opacity 0.3s ease 0.2s;
+}
+
+section.faq .q.active+.answer p {
+  opacity: 1;
+}
+
+section.contact .map {
+  height: 25rem;
+}
+
+footer .arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+/* footer input{
+  border-bottom: 1px solid var(--color-bwhite);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+} */
+
+/* Стили для футера и формы подписки */
+footer .email-subscription {
+  position: relative;
+}
+
+footer .input-wrapper {
+  position: relative;
+  /* padding-bottom: 8px; */
+  border-bottom: 1px solid var(--color-bwhite);
+  align-items: center;
+}
+
+footer input {
+  width: 100%;
+  /* padding: 0.5rem 0; */
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--color-bwhite);
+  font-size: var(--font-size-base);
+}
+
+footer input::placeholder {
+  color: rgba(255, 254, 247, 0.5);
+  transition: opacity 0.3s ease;
+}
+
+footer input:focus::placeholder {
+  opacity: 0;
+}
+
+/* Стили для кнопки-стрелки */
+footer .arrow-button {
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: 8px;
+}
+
+footer .arrow {
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Анимации при взаимодействии */
+footer .arrow-button:hover .arrow {
+  transform: scale(1.2) translate(2px, -2px);
+}
+
+footer .arrow-button:active .arrow {
+  transform: scale(0.95) translate(1px, -1px);
+}
+
+/* Фокус состояния для доступности */
+footer .arrow-button:focus {
+  outline: 2px solid rgba(255, 254, 247, 0.5);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+footer .separate {
+  height: 1px;
+  opacity: 20%;
+}
+
+/* Контейнер для иконок */
+/* .w-100.df.column-dir.gap-16.jce.aie {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 16px;
+} */
+
+/* Стили для иконок соцсетей */
+.w-100.df.column-dir.gap-12.jce.aie a {
+  display: inline-flex;
+
+  background-color: transparent;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Анимация при наведении */
+.w-100.df.column-dir.gap-12.jce.aie a:hover {
+  transform: scale(1.1);
+}
+
+/* Стили для изображений внутри ссылок */
+.w-100.df.column-dir.gap-12.jce.aie a img {
+  /* width: 24px;
+      height: 24px; */
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* Дополнительный эффект при наведении на изображение */
+.w-100.df.column-dir.gap-12.jce.aie a:hover img {
+  transform: scale(1.15);
+}

@@ -142,7 +142,7 @@ h3 {
 
 h4 {
     font-size: var(--font-size-lg) !important;
-    font-weight: 400 !important;
+    font-weight: 350 !important;
     line-height: 100% !important;
     margin-bottom: 0 !important;
 }
@@ -236,7 +236,7 @@ html {
     border-color: var(--color-green);
 }
 
-.border-white {
+.border-bwhite {
     border-color: var(--color-white);
 }
 
@@ -284,7 +284,7 @@ html {
     color: var(--color-green);
 }
 
-.text-white {
+.text-bwhite {
     color: var(--color-bwhite);
 }
 

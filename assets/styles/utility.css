@@ -309,6 +309,8 @@ body {
   border: none;
   background-color: var(--color-green);
   color: var(--color-bwhite);
+    width: fit-content;
+
 }
 
 /* При нажатии */
@@ -338,6 +340,8 @@ body {
   border: none;
   background-color: #BFBDAE;
   color: var(--color-bwhite);
+    width: fit-content;
+
 }
 
 /* При нажатии */
@@ -361,6 +365,8 @@ body {
 .btn-link-green:hover {
   color: #333531 !important;
   border-bottom: 1px solid #333531;
+    width: fit-content;
+
 }
 
 /* При нажатии */
@@ -383,6 +389,8 @@ body {
 .btn-link-bwhite:hover {
   color: #BFBDAE !important;
   border-bottom: 1px solid #BFBDAE;
+    width: fit-content;
+
 }
 
 /* При нажатии */
@@ -406,6 +414,8 @@ body {
 .btn-link-green-sec:hover {
   color: #333531 !important;
   border-bottom: 1px solid #333531;
+    width: fit-content;
+
 }
 
 /* При нажатии */
@@ -416,18 +426,20 @@ body {
 
 /* Ссылка белая 1 */
 .btn-link-bwhite-sec {
+  width: auto;
   color: var(--color-bwhite);
   text-decoration: none !important;
   justify-content: center;
   transition: border 0.2s ease;
   cursor: pointer;
-  font-size: var(--font-size-);
+  font-size: var(--font-size-base);
 }
 
 /* При наведении */
 .btn-link-bwhite-sec:hover {
   color: #BFBDAE !important;
   border-bottom: 1px solid #BFBDAE;
+  width: fit-content;
 }
 
 /* При нажатии */
