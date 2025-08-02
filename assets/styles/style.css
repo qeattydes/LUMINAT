@@ -322,7 +322,7 @@ section.cooperation .btn-link-green {
 }
 
 .cooperation .col-6.team {
-  background-image: url('/assets/images/team-2.png');
+  background-image: url("https://github.com/qeattydes/LUMINAT/blob/main/assets/images/team-2.png?raw=true");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
