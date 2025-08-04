@@ -757,3 +757,70 @@ section.catalog .collections {
 .filter-dropdown {
     overflow-x: hidden; /* Скрыть горизонтальный скролл */
 }
+
+/* Разрешить скролл внутри секции проектов */
+#projects-section {
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Предотвратить скролл родителя */
+}
+
+/* Отключить скролл для остальных секций */
+section:not(#projects-section) {
+  overflow: hidden;
+}
+
+
+
+.hidden-scroll {
+  overflow: auto;
+  height: 200px;
+
+  /* Для Firefox, IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  /* Для WebKit */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Для основной навигации */
+section {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Для секции проектов */
+#projects-section {
+  height: 100vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+/* Скрыть скроллбар для секции проектов */
+#projects-section::-webkit-scrollbar {
+  display: none;
+}
+
+#projects-section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Анимации для контента проектов */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+/* Отключить скролл для body */
+body.hidden-scroll {
+  overflow: hidden;
+}
