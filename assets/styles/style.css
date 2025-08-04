@@ -744,7 +744,7 @@ section.catalog .filters {
   /* Фиксированная ширина фильтров */
 }
 
-.collections {
+section.catalog .collections {
     flex: 1; /* Основное пространство для товаров */
     overflow-y: auto; /* Скролл для товаров (если нужно) */
 }
