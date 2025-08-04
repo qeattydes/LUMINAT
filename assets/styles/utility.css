@@ -2,8 +2,8 @@
 
 /* Container padding (32px left and right) */
 .container-32 {
-  margin-left: 32px !important;
-  margin-right: 32px !important;
+  padding-left: 32px !important;
+  padding-right: 32px !important;
   gap: 32px;
 }
 
