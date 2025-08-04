@@ -54,6 +54,14 @@
     font-style: normal;
 }
 
+/* Futura PT light Italic */
+@font-face {
+    font-family: 'Futura PT';
+    src: url('../fonts/FuturaPT-LightObl.ttf') format('truetype');
+    font-weight: 200;
+    font-style: italic;
+}
+
 /* Futura PT Book Italic */
 @font-face {
     font-family: 'Futura PT';
