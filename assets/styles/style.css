@@ -67,7 +67,7 @@ section.welcome {
 }
 
 section.welcome {
-  height: 100vh;
+  height: 110vh;
 }
 
 section.welcome .container-fluid,
@@ -773,6 +773,40 @@ section.connection .input-wrapper {
   background-color: var(--color-green) !important;
   border-bottom-color: var(--color-bwhite) !important;
 }
+
+/* Разрешить скролл внутри секции проектов */
+#projects-section {
+  overflow-y: auto;
+  overscroll-behavior: contain; /* Предотвратить скролл родителя */
+}
+
+/* Отключить скролл для остальных секций */
+section:not(#projects-section) {
+  overflow: hidden;
+}
+
+
+
+
+.project-item {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.project-item.active {
+    opacity: 1;
+    z-index: 10;
+}
+.project-item.past {
+    opacity: 0.5;
+    transform: translateY(-20px);
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
 
 /* Отключаем скриптовые изменения для about-page */
 /* .about-page .header-transparent,

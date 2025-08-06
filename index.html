@@ -61,7 +61,7 @@
                     </div>
                 </header>
                 <section class="welcome reletive">
-                    <div class=" h-100 mt-72">
+                    <div class="h-100 mt-72 pb-72">
                         <div class=" align-items-center h-100 df">
                             <div class="video-wrapper position-relative w-50 h-100">
                                 <video autoplay muted loop playsinline class="background-video">
@@ -76,7 +76,7 @@
                                         воздействии на окружающую среду
                                     мальчик без очков тупое фото удалить</p>
                                 </div>
-                                <div class="d-flex aie jcsb mb-48 ">
+                                <div class="d-flex aie jcsb mb-72 ">
                                     <img src="./assets/images/Vector.svg" alt="">
                                     <div class="d-flex column-dir gap-24 text-end">
                                         <p class="">Жизнь</p>
@@ -94,8 +94,6 @@
                     </div> -->
                         </div>
                     </div>
-
-
                 </section>
                 <section class="about">
                     <div class="container-fluid mt-72 df grid-12">
@@ -206,8 +204,8 @@
 
                         </div>
                 </section>
-                <section class="projects" id="projects-section">
-                    <div class="projects-scroll-container mt-72">
+                <section class="projects" id="projects-section" style="margin-top: 10%;">
+                    <div class="projects-scroll-container ">
                         <!-- Левая часть - изображения проектов -->
                         <div class="projects-images" id="projects-scroll">
                             <!-- Проект 1 -->
@@ -265,7 +263,7 @@
 
                 <!-- Шаблоны для проектов -->
                 <template id="project-1-template">
-                    <div class="down df column-dir gap-32 " style="margin-top: 40px;">
+                    <div class="down df column-dir gap-32 " >
                         <h6>ТИШИНА В БЕТОНЕ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -312,7 +310,7 @@
                 </template>
 
                 <template id="project-2-template">
-                    <div class="down df column-dir gap-32" style="margin-top: 40px;">
+                    <div class="down df column-dir gap-32"  >
                         <h6>ЛУЧИ ПАМЯТИ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -359,7 +357,7 @@
                 </template>
 
                 <template id="project-3-template">
-                    <div class="down df column-dir gap-32" style="margin-top: 40px;">
+                    <div class="down df column-dir gap-32" >
                         <h6>ПЛАСТИКА СВЕТА</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -406,7 +404,7 @@
                 </template>
 
                 <template id="project-4-template">
-                    <div class="down df column-dir gap-32" style="margin-top: 40px;">
+                    <div class="down df column-dir gap-32" >
                         <h6>МЕЖДУ ОКНАМИ И НЕБОМ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -714,11 +712,10 @@
                             <div id="map" class="w-100 map "></div>
                             <!-- сюда надо вставить андекс карту чтоыбы она еще была стилизована под #40423D -->
                         </div>
-
-
                     </div>
                 </section>
-                <footer class="bg-green">
+                <section class="footer">
+                    <footer class="bg-green">
                     <div class="df column-dir py-64 container-32 gap-48">
                         <div class="col-4 df column-dir gap-24">
                             <h6 class="text-bwhite">Подписаться</h6>
@@ -792,363 +789,28 @@
                         </div>
                     </div>
                 </footer>
+                </section>
             </main>
         </div>
     </div>
-
-
 
     <!-- Подключаем скрипты В ЭТОМ ПОРЯДКЕ -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollSmoother.min.js"></script>
 
+    <script src="./assets/js/smooth-section-scroll.js" defer></script>
+    <script src="./assets/js/projects.js" defer></script>
     <!-- Ваши кастомные скрипты -->
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU"></script>
 
-    <!-- Главный JS файл -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // 1. Инициализация плавного скролла
-            if (typeof gsap !== 'undefined' &&
-                typeof ScrollTrigger !== 'undefined' &&
-                typeof ScrollSmoother !== 'undefined') {
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/faq.js"></script>
+    <script src="./assets/js/map.js"></script>
+    <script src="./assets/js/header.js"></script>
+    <!-- после всех остальных скриптов -->
 
-                gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-
-                let smootherInstance = ScrollSmoother.create({
-                    wrapper: "#smooth-wrapper",
-                    content: "#smooth-content",
-                    smooth: 1.5, // Скорость скролла (1 - нормально, 2 - плавнее)
-                    effects: true, // Включаем параллакс-эффекты
-                    normalizeScroll: true // Фикс для тачпадов
-                });
-                smoother = smootherInstance;
-
-
-                // Обновляем при загрузке изображений
-                window.addEventListener('load', () => {
-                    ScrollTrigger.refresh();
-                    smoother.refresh();
-                });
-            }
-
-            // 1. Код для проектов
-            const projectItems = document.querySelectorAll('.project-item');
-            const contentContainer = document.getElementById('project-content');
-            const projectsSection = document.getElementById('projects-section');
-            let isProjectsActive = false;
-            let isScrolling = false;
-            let currentProject = 0;
-
-            let smoother;
-            let bodyOverflowPrev;
-
-            function lockScroll() {
-                 if (smoother) smoother.smooth = 0;
-                bodyOverflowPrev = document.body.style.overflow;
-                document.body.style.overflow = 'hidden';
-            }
-
-            function unlockScroll() {
-                 if (smoother) smoother.smooth = 1.5;
-                document.body.style.overflow = bodyOverflowPrev || '';
-            }
-
-            // Инициализация проектов
-            if (projectItems.length > 0) {
-                projectItems[0].classList.add('active');
-                loadProjectContent(1);
-            }
-
-            function loadProjectContent(projectNumber) {
-                const template = document.getElementById(`project-${projectNumber}-template`);
-                if (template) {
-                    contentContainer.classList.add('fade-out');
-
-                    setTimeout(() => {
-                        contentContainer.innerHTML = '';
-                        const clone = template.content.cloneNode(true);
-                        contentContainer.appendChild(clone);
-
-                        contentContainer.classList.remove('fade-out');
-                        contentContainer.classList.add('fade-in');
-
-                        setTimeout(() => {
-                            contentContainer.classList.remove('fade-in');
-                        }, 800);
-                    }, 500);
-                }
-            }
-
-            // Наблюдатель за секцией проектов
-            if (projectsSection) {
-                const sectionObserver = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        isProjectsActive = entry.isIntersecting;
-                        if (!isProjectsActive && currentProject > 0) {
-                            resetProjects();
-                        }
-                    });
-                }, { threshold: 1 });
-
-                sectionObserver.observe(projectsSection);
-            }
-
-            function resetProjects() {
-                projectItems.forEach((item, index) => {
-                    item.classList.remove('active', 'past');
-                    if (index < currentProject) {
-                        item.classList.add('past');
-                    }
-                });
-                currentProject = 0;
-            }
-
-            function activateProject(index) {
-                for (let i = 0; i < index; i++) {
-                    projectItems[i].classList.add('past');
-                    projectItems[i].classList.remove('active');
-                }
-
-                projectItems[index].classList.add('active');
-                projectItems[index].classList.remove('past');
-
-                for (let i = index + 1; i < projectItems.length; i++) {
-                    projectItems[i].classList.remove('active', 'past');
-                }
-
-                currentProject = index + 1;
-                loadProjectContent(currentProject);
-                updateParallax();
-            }
-
-            function updateParallax() {
-                projectItems.forEach((item, i) => {
-                    const img = item.querySelector('img');
-                    if (img) {
-                        const depth = Math.abs(i - currentProject + 1) * 0.1;
-                        img.style.transform = `scale(${1 + depth})`;
-                    }
-                });
-            }
-
-            if (projectsSection) {
-                window.addEventListener('wheel', function (e) {
-                    if (!isProjectsActive || isScrolling) return;
-                    const delta = e.deltaY;
-
-                    if (delta > 0 && currentProject >= projectItems.length) return;
-                    if (delta < 0 && currentProject <= 1) return;
-
-                    e.preventDefault();
-                    isScrolling = true;
-                    lockScroll();
-
-
-                    const nextProject = delta > 0 ? currentProject : currentProject - 2;
-                    activateProject(nextProject);
-
-                    setTimeout(() => {
-                        isScrolling = false;
-                        unlockScroll();
-                    }, 1000);
-                }, { passive: false });
-
-                let touchStartY = 0;
-                projectsSection.addEventListener('touchstart', function (e) {
-                    touchStartY = e.touches[0].clientY;
-                }, { passive: true });
-
-                projectsSection.addEventListener('touchmove', function (e) {
-                    if (!isProjectsActive || isScrolling) return;
-
-                    const touchY = e.touches[0].clientY;
-                    const deltaY = touchStartY - touchY;
-
-                    if (Math.abs(deltaY) > 50) {
-                        e.preventDefault();
-                        isScrolling = true;
-                        lockScroll();
-
-                        const nextProject = deltaY > 0 ? currentProject : currentProject - 2;
-
-                        if (nextProject < 0 || nextProject >= projectItems.length) {
-                            isScrolling = false;
-                            return;
-                        }
-
-                        activateProject(nextProject);
-
-                        setTimeout(() => {
-                            isScrolling = false;
-                            unlockScroll();
-                        }, 1000);
-                    }
-                }, { passive: false });
-
-                projectsSection.addEventListener('mousemove', function (e) {
-                    if (!isProjectsActive) return;
-
-                    const activeItem = document.querySelector('.project-item.active');
-                    if (!activeItem) return;
-
-                    const img = activeItem.querySelector('img');
-                    if (!img) return;
-
-                    const rect = projectsSection.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-
-                    const moveX = (x - centerX) / centerX * 15;
-                    const moveY = (y - centerY) / centerY * 15;
-
-                    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
-                });
-
-                projectsSection.addEventListener('mouseleave', function () {
-                    const activeItem = document.querySelector('.project-item.active');
-                    if (activeItem) {
-                        const img = activeItem.querySelector('img');
-                        if (img) {
-                            img.style.transform = 'scale(1)';
-                        }
-                    }
-                });
-            }
-
-            // 2. Код для FAQ
-            const faqItems = document.querySelectorAll('.faq .q');
-            faqItems.forEach(item => {
-                const toggle = item.querySelector('img');
-                const answer = item.parentElement.querySelector('.answer');
-
-                item.addEventListener('click', function (e) {
-                    if (e.target.tagName === 'IMG' || e.target.tagName === 'A') {
-                        e.preventDefault();
-                    }
-
-                    if (!this.classList.contains('active')) {
-                        document.querySelectorAll('.faq .q.active').forEach(activeItem => {
-                            activeItem.classList.remove('active');
-                            activeItem.nextElementSibling.style.maxHeight = '0';
-                            activeItem.nextElementSibling.style.paddingTop = '0';
-                            activeItem.nextElementSibling.style.paddingBottom = '0';
-                        });
-                    }
-
-                    this.classList.toggle('active');
-                    if (this.classList.contains('active')) {
-                        answer.style.maxHeight = answer.scrollHeight + 'px';
-                        answer.style.paddingTop = '16px';
-                        answer.style.paddingBottom = '16px';
-                    } else {
-                        answer.style.maxHeight = '0';
-                        answer.style.paddingTop = '0';
-                        answer.style.paddingBottom = '0';
-                    }
-                });
-            });
-
-            // 3. Код для карты (если API Яндекс.Карт загружен)
-            if (typeof ymaps !== 'undefined') {
-                ymaps.ready(init);
-
-                function init() {
-                    var myMap = new ymaps.Map("map", {
-                        center: [56.326887, 44.005986],
-                        zoom: 16,
-                        controls: ['zoomControl']
-                    });
-
-                    var myPlacemark = new ymaps.Placemark([56.325526, 44.003724], {
-                        hintContent: 'Luminat',
-                        balloonContent: 'Большая Покровская улица, 3'
-                    }, {
-                        iconLayout: 'default#image',
-                        iconImageHref: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
-                        iconImageSize: [40, 40],
-                        iconImageOffset: [-20, -40]
-                    });
-
-                    myMap.geoObjects.add(myPlacemark);
-                    myMap.options.set({
-                        suppressMapOpenBlock: true
-                    });
-
-                    myMap.setOptions({
-                        suppressMapOpenBlock: true,
-                        yandexMapDisablePoiInteractivity: true
-                    });
-
-                    myMap.options.set('styles', [
-                        {
-                            "featureType": "all",
-                            "elementType": "all",
-                            "stylers": [
-                                { "saturation": -100 },
-                                { "lightness": 40 },
-                                { "gamma": 0.8 }
-                            ]
-                        },
-                        {
-                            "featureType": "water",
-                            "elementType": "geometry.fill",
-                            "stylers": [
-                                { "color": "#40423D" }
-                            ]
-                        },
-                        {
-                            "featureType": "road",
-                            "elementType": "geometry.fill",
-                            "stylers": [
-                                { "color": "#40423D" }
-                            ]
-                        },
-                        {
-                            "featureType": "road",
-                            "elementType": "geometry.stroke",
-                            "stylers": [
-                                { "color": "#40423D" }
-                            ]
-                        }
-                    ]);
-                }
-            }
-
-            // 4. Код для header
-            const header = document.querySelector('header');
-            if (header) {
-                let lastScroll = 0;
-
-                window.addEventListener('scroll', function () {
-                    const currentScroll = window.pageYOffset;
-
-                    if (currentScroll <= 0) {
-                        header.classList.remove('header-hidden');
-                    } else if (currentScroll > lastScroll) {
-                        header.classList.add('header-hidden');
-                    } else {
-                        header.classList.remove('header-hidden');
-                    }
-                    lastScroll = currentScroll;
-
-                    if (currentScroll > 100) {
-                        header.classList.add('header-solid');
-                        header.classList.remove('header-transparent');
-                    } else {
-                        header.classList.add('header-transparent');
-                        header.classList.remove('header-solid');
-                    }
-                });
-            }
-
-        });
-    </script>
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_настоящий_API_ключ&lang=ru_RU"></script>
-
 </body>
 
 </html>
