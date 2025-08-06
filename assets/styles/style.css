@@ -787,19 +787,6 @@ section:not(#projects-section) {
 
 
 
-.hidden-scroll {
-  overflow: auto;
-  height: 200px;
-
-  /* Для Firefox, IE/Edge */
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-
-  /* Для WebKit */
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
 
 .project-item {
     opacity: 0;
