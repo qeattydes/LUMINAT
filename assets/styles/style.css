@@ -745,17 +745,33 @@ section.catalog .filters {
 }
 
 section.catalog .collections {
-    flex: 1; /* Основное пространство для товаров */
-    overflow-y: auto; /* Скролл для товаров (если нужно) */
+  flex: 1;
+  /* Основное пространство для товаров */
+  overflow-y: auto;
+  /* Скролл для товаров (если нужно) */
 }
 
 /* Стили для скроллбара (опционально) */
 .filters::-webkit-scrollbar {
-    display: none;
+  display: none;
 }
 
 .filter-dropdown {
-    overflow-x: hidden; /* Скрыть горизонтальный скролл */
+  overflow-x: hidden;
+  /* Скрыть горизонтальный скролл */
+}
+
+section.connection .input-wrapper {
+  height: 4rem;
+  border: none;
+  background-color: #bfbdae1c;
+  padding: 1rem;
+}
+
+/* Стили для хеддера на странице about.html */
+.about-page header {
+  background-color: var(--color-green) !important;
+  border-bottom-color: var(--color-bwhite) !important;
 }
 
 /* Разрешить скролл внутри секции проектов */
@@ -804,3 +820,12 @@ section:not(#projects-section) {
     will-change: transform;
 }
 
+
+/* Отключаем скриптовые изменения для about-page */
+/* .about-page .header-transparent,
+.about-page .header-solid,
+.about-page .header-hidden {
+  background-color: var(--color-green) !important;
+  border-bottom-color: transparent !important;
+  transform: none !important;
+} */

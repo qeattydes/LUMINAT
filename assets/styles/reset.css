@@ -137,12 +137,15 @@ h2 {
 }
 
 h3 {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xl) !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
 }
 
 h4 {
     font-size: var(--font-size-lg) !important;
-    font-weight: 350 !important;
+    font-weight: 400 !important;
     line-height: 100% !important;
     margin-bottom: 0 !important;
 }
@@ -336,6 +339,14 @@ html {
     color: transparent;
 }
 
+.h-gradient-bwhite {
+    background: linear-gradient(180deg, rgba(255, 254, 247, 1) 0%, rgba(176, 181, 170, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
 .responsive-img-3-4 {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -357,6 +368,15 @@ html {
 .responsive-img-9-16 {
     width: 100%;
     aspect-ratio: 9 / 16;
+    /* или 16 / 9, 1 / 1 и т.п. */
+    object-fit: cover;
+    /* или contain, если нужно видеть всё изображение */
+    display: block;
+}
+
+.responsive-img-16-9 {
+    width: 100%;
+    aspect-ratio: 16 / 9;
     /* или 16 / 9, 1 / 1 и т.п. */
     object-fit: cover;
     /* или contain, если нужно видеть всё изображение */
