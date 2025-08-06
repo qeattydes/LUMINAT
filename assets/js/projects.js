@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const projectItems = document.querySelectorAll('.project-item');
     const contentContainer = document.getElementById('project-content');
     const projectsSection = document.getElementById('projects-section');
@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let isScrolling = false;
     let currentProject = 0;
 
+    // Инициализация первого проекта
     if (projectItems.length > 0) {
         projectItems[0].classList.add('active');
         loadProjectContent(1);
@@ -15,15 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const template = document.getElementById(`project-${projectNumber}-template`);
         if (template) {
             contentContainer.classList.add('fade-out');
-
             setTimeout(() => {
                 contentContainer.innerHTML = '';
                 const clone = template.content.cloneNode(true);
                 contentContainer.appendChild(clone);
-
                 contentContainer.classList.remove('fade-out');
                 contentContainer.classList.add('fade-in');
-
                 setTimeout(() => {
                     contentContainer.classList.remove('fade-in');
                 }, 800);
@@ -31,43 +29,45 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Наблюдатель за секцией проектов
     if (projectsSection) {
-        const sectionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                isProjectsActive = entry.isIntersecting;
-                if (!isProjectsActive && currentProject > 0) {
-                    resetProjects();
-                }
-            });
-        }, { threshold: 0.9 });
-
+        const sectionObserver = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    isProjectsActive = entry.isIntersecting;
+                    if (!isProjectsActive && currentProject > 0) {
+                        resetProjects();
+                    }
+                });
+            },
+            { threshold: 0.5 } // Уменьшил threshold для более точного определения
+        );
         sectionObserver.observe(projectsSection);
     }
 
     function resetProjects() {
         projectItems.forEach((item, index) => {
             item.classList.remove('active', 'past');
-            if (index < currentProject) {
-                item.classList.add('past');
+            if (index === 0) {
+                item.classList.add('active'); // Первый проект всегда активен при ресете
             }
         });
         currentProject = 0;
+        loadProjectContent(1);
+        updateParallax();
     }
 
     function activateProject(index) {
         if (index < 0 || index >= projectItems.length) return;
 
-        for (let i = 0; i < index; i++) {
-            projectItems[i].classList.add('past');
-            projectItems[i].classList.remove('active');
-        }
-
-        projectItems[index].classList.add('active');
-        projectItems[index].classList.remove('past');
-
-        for (let i = index + 1; i < projectItems.length; i++) {
-            projectItems[i].classList.remove('active', 'past');
-        }
+        projectItems.forEach((item, i) => {
+            item.classList.remove('active', 'past');
+            if (i < index) {
+                item.classList.add('past');
+            } else if (i === index) {
+                item.classList.add('active');
+            }
+        });
 
         currentProject = index;
         loadProjectContent(currentProject + 1);
@@ -85,93 +85,127 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     if (projectsSection) {
-        projectsSection.addEventListener('wheel', function(e) {
+        projectsSection.addEventListener(
+            'wheel',
+            function (e) {
             if (!isProjectsActive || isScrolling) return;
 
-            const delta = e.deltaY;
-            let nextProject = currentProject;
+                const delta = e.deltaY;
+                let nextProject = currentProject;
 
-            if (delta > 0) {
-                nextProject = Math.min(currentProject + 1, projectItems.length - 1);
-            } else if (delta < 0) {
-                nextProject = Math.max(currentProject - 1, 0);
-            }
-
-            if (nextProject === currentProject) return;
-
-            e.preventDefault();
-            isScrolling = true;
-
-            activateProject(nextProject);
-
-            setTimeout(() => {
-                isScrolling = false;
-
-                if (nextProject === projectItems.length - 1 && delta > 0) {
-                    setTimeout(() => {
-                        if (window.scrollToNextSection) {
-                            window.scrollToNextSection();
-                        }
-                    }, 300);
+                if (delta > 0) {
+                    nextProject = Math.min(currentProject + 1, projectItems.length - 1);
+                } else if (delta < 0) {
+                    nextProject = Math.max(currentProject - 1, 0);
                 }
-                else if (nextProject === 0 && delta < 0) {
-                    setTimeout(() => {
-                        if (window.scrollToPrevSection) {
-                            window.scrollToPrevSection();
-                        }
-                    }, 300);
+
+
+                    if (nextProject === currentProject) {
+                    if (currentProject === projectItems.length - 1 && delta > 0) {
+                        return void window.scrollToNextSection?.();
+                    }
+      
+                    if (currentProject === 0 && delta < 0) {
+                        return void window.scrollToPrevSection?.();
+                    }
+      
+                    return;
                 }
-            }, 1000);
-        }, { passive: false });
+
+                e.preventDefault();
+                isScrolling = true;
+
+                activateProject(nextProject);
+
+                setTimeout(() => {
+                    isScrolling = false;
+
+                    // Переход к следующей секции, если достигнут последний проект
+                    if (nextProject === projectItems.length - 1 && delta > 0) {
+                        setTimeout(() => {
+                            if (window.scrollToNextSection) {
+                                window.scrollToNextSection();
+                            }
+                        }, 300);
+                    }
+                    // Переход к предыдущей секции, если достигнут первый проект
+                    else if (nextProject === 0 && delta < 0) {
+                        setTimeout(() => {
+                            if (window.scrollToPrevSection) {
+                                window.scrollToPrevSection();
+                            }
+                        }, 300);
+                    }
+                }, 1000);
+            },
+            { passive: false }
+        );
 
         // Touch события
         let touchStartY = 0;
-        projectsSection.addEventListener('touchstart', function(e) {
-            touchStartY = e.touches[0].clientY;
-        }, { passive: true });
+        projectsSection.addEventListener(
+            'touchstart',
+            function (e) {
+                touchStartY = e.touches[0].clientY;
+            },
+            { passive: true }
+        );
 
-        projectsSection.addEventListener('touchend', function(e) {
-            if (!isProjectsActive || isScrolling) return;
+        projectsSection.addEventListener(
+            'touchend',
+            function (e) {
+                if (!isProjectsActive || isScrolling) return;
 
-            const touchEndY = e.changedTouches[0].clientY;
-            const diff = touchStartY - touchEndY;
-            let nextProject = currentProject;
+                const touchEndY = e.changedTouches[0].clientY;
+                const diff = touchStartY - touchEndY;
+                let nextProject = currentProject;
 
-            if (diff > 50) {
-                nextProject = Math.min(currentProject + 1, projectItems.length - 1);
-            } else if (diff < -50) {
-                nextProject = Math.max(currentProject - 1, 0);
-            }
-
-            if (nextProject === currentProject) return;
-
-            e.preventDefault();
-            isScrolling = true;
-
-            activateProject(nextProject);
-
-            setTimeout(() => {
-                isScrolling = false;
-
-                if (nextProject === projectItems.length - 1 && diff > 50) {
-                    setTimeout(() => {
-                        if (window.scrollToNextSection) {
-                            window.scrollToNextSection();
-                        }
-                    }, 300);
+                if (diff > 50) {
+                    nextProject = Math.min(currentProject + 1, projectItems.length - 1);
+                } else if (diff < -50) {
+                    nextProject = Math.max(currentProject - 1, 0);
                 }
-                else if (nextProject === 0 && diff < -50) {
-                    setTimeout(() => {
-                        if (window.scrollToPrevSection) {
-                            window.scrollToPrevSection();
-                        }
-                    }, 300);
+
+                if (nextProject === currentProject) return;
+
+                if (nextProject === currentProject) {
+                    if (currentProject === projectItems.length - 1 && delta > 0) {
+                        return void window.scrollToNextSection?.();
+                    }
+      
+                    if (currentProject === 0 && delta < 0) {
+                        return void window.scrollToPrevSection?.();
+                    }
                 }
-            }, 1000);
-        }, { passive: false });
+
+                e.preventDefault();
+                isScrolling = true;
+
+                activateProject(nextProject);
+
+                setTimeout(() => {
+                    isScrolling = false;
+
+                    if (nextProject === projectItems.length - 1 && diff > 50) {
+                        setTimeout(() => {
+                            if (window.scrollToNextSection) {
+                                window.scrollToNextSection();
+                            }
+                        }, 300);
+                    } else if (nextProject === 0 && diff < -50) {
+                        setTimeout(() => {
+                            if (window.scrollToPrevSection) {
+                                window.scrollToPrevSection();
+                            }
+                        }, 300);
+                    }
+                }, 1000);
+            },
+            { passive: false }
+        );
 
         // Parallax эффекты
-        projectsSection.addEventListener('mousemove', function(e) {
+        projectsSection.addEventListener('mousemove', function (e) {
             if (!isProjectsActive) return;
 
             const activeItem = document.querySelector('.project-item.active');
@@ -192,7 +226,7 @@ document.addEventListener('DOMContentLoaded', function() {
             img.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.05)`;
         });
 
-        projectsSection.addEventListener('mouseleave', function() {
+        projectsSection.addEventListener('mouseleave', function () {
             const activeItem = document.querySelector('.project-item.active');
             if (activeItem) {
                 const img = activeItem.querySelector('img');

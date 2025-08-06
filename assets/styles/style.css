@@ -785,4 +785,22 @@ section:not(#projects-section) {
   }
 }
 
+.project-item {
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.project-item.active {
+    opacity: 1;
+    z-index: 10;
+}
+.project-item.past {
+    opacity: 0.5;
+    transform: translateY(-20px);
+}
+
+.header-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
 
