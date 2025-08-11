@@ -151,7 +151,10 @@ h4 {
 }
 
 h5 {
-    font-size: var(--font-size-md);
+    font-size: var(--font-size-md) !important;
+    font-weight: 400 !important;
+    line-height: 100% !important;
+    margin-bottom: 0 !important;
 }
 
 h6 {
@@ -439,4 +442,8 @@ html {
 .collection-card:hover a {
     opacity: 1;
     pointer-events: auto;
+}
+
+.medium{
+    font-weight: 500;
 }

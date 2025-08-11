@@ -27,7 +27,7 @@
 
                             <!-- Левая часть (1-6 колонки) -->
                             <div class="col-6 d-flex align-items-center d-flex aic ">
-                                <a href="#" class="text-decoration-none text-bwhite">
+                                <a href="#" class="text-decoration-none text-green">
                                     <p>2025</p>
                                 </a>
                             </div>
@@ -52,14 +52,187 @@
 
                             <!-- Правая часть (11-12 колонки) -->
                             <div class="col-2 d-flex justify-content-end gap-3">
-                                <img class="icon-md" src="./assets/images/Heart_01.svg" alt="">
-                                <img class="icon-md" src="./assets/images/Shopping_Cart_02.svg" alt="">
-                                <img class="icon-md" src="./assets/images/User_02.svg" alt="">
+                                <a href="./favorites.html">
+                                    <img class="icon-md" src="./assets/images/Heart_01.svg" alt="">
+                                </a>
+                                <a href="./favorites.html" id="openModal">
+                                    <img class="icon-md" src="./assets/images/Shopping_Cart_02.svg" alt="">
+                                </a>
+                                <a href="./profile.html">
+                                    <img class="icon-md" src="./assets/images/User_02.svg" alt="">
+                                </a>
                             </div>
 
                         </div>
                     </div>
                 </header>
+
+                <section class="cart">
+                    <div id="modal" class="modal ">
+                        <div class="modal-content bg-bwhite px-32">
+                            <div class="modal-header df jcsb mt-32 pb-24">
+                                <h2 class="text-green">Корзина</h2>
+                                <span class="close btn-green-sec px-16">Закрыть</span>
+                            </div>
+
+                            <div class="modal-body df my-32 gap-32  column-dir">
+                                <div class="df gap-32 jcsb order cart-item">
+                                    <div class="df gap-32">
+                                        <div class="col-4">
+                                            <img src="./assets/images/Blurglass.webp" alt="" class="responsive-img-1-1">
+                                        </div>
+                                        <div class="df column-dir jcsb py-16">
+                                            <div class="df column-dir gap gap-16">
+                                                <h6 class="text-green">Blur</h6>
+                                                <div class="df column-dir gap-8">
+                                                    <div class="caption text-bw-7">It is a long established fact that a
+                                                        reader
+                                                        will be distracted by the readable</div>
+                                                </div>
+                                            </div>
+                                            <h6 class="text-green">12 000₽</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class=" df right jcsb py-16 ">
+                                        <div class="df column-dir jcsb aie">
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                        stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                            <div class="df gap-8 aic">
+                                                <a href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                        viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                                <h6 class="text-green">1</h6>
+                                                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="df gap-32 jcsb order cart-item">
+                                    <div class="df gap-32">
+                                        <div class="col-4">
+                                            <img src="./assets/images/Fossil.webp" alt="" class="responsive-img-1-1">
+                                        </div>
+                                        <div class="df column-dir jcsb py-16">
+                                            <div class="df column-dir gap gap-16">
+                                                <h6 class="text-green">Fossil</h6>
+                                                <div class="df column-dir gap-8">
+                                                    <div class="caption text-bw-7">It is a long established fact that a
+                                                        reader
+                                                        will be distracted by the readable</div>
+                                                </div>
+                                            </div>
+                                            <h6 class="text-green">12 000₽</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class=" df  right jcsb py-16">
+                                        <div class="df column-dir jcsb aie">
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                        stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                            <div class="df gap-8 aic">
+                                                <a href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                        viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                                <h6 class="text-green">1</h6>
+                                                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="df gap-32 jcsb order cart-item">
+                                    <div class="df gap-32">
+                                        <div class="col-4">
+                                            <img src="./assets/images/Dot.webp" alt="" class="responsive-img-1-1">
+                                        </div>
+                                        <div class="df column-dir jcsb py-16">
+                                            <div class="df column-dir gap gap-16">
+                                                <h6 class="text-green">Dot</h6>
+                                                <div class="df column-dir gap-8">
+                                                    <div class="caption text-bw-7">It is a long established fact that a
+                                                        reader
+                                                        will be distracted by the readable</div>
+                                                </div>
+                                            </div>
+                                            <h6 class="text-green">12 000₽</h6>
+                                        </div>
+                                    </div>
+
+                                    <div class=" df  right jcsb py-16">
+                                        <div class="df column-dir jcsb aie">
+                                            <a href="">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none">
+                                                    <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                        stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" />
+                                                </svg>
+                                            </a>
+                                            <div class="df gap-8 aic">
+                                                <a href="">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                        viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                            stroke-linecap="round" stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                                <h6 class="text-green">1</h6>
+                                                <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                                        height="32" viewBox="0 0 32 32" fill="none">
+                                                        <rect width="32" height="32" fill="#40423D" />
+                                                        <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <a href="./order_personal_info.html" class="btn-green-sec"> Перейти к оформлению</a>
+                            </div>
+
+                        </div>
+                    </div>
+                </section>
+
                 <section class="welcome reletive">
                     <div class="h-100 mt-72 pb-72">
                         <div class=" align-items-center h-100 df">
@@ -74,7 +247,7 @@
                                     <p>Свет</p>
                                     <p>Передовые решения, улучшающие <br>качество освещения при минимальном <br>
                                         воздействии на окружающую среду
-                                    мальчик без очков тупое фото удалить</p>
+                                        мальчик без очков тупое фото удалить</p>
                                 </div>
                                 <div class="d-flex aie jcsb mb-72 ">
                                     <img src="./assets/images/Vector.svg" alt="">
@@ -199,10 +372,10 @@
                             </div>
                             <div class="col-2 df column-dir gap-16 text-greyge">
                                 <div class="caption">Фото умный мальчик <br> в очках скачать</div>
-                                </div>
                             </div>
-
                         </div>
+
+                    </div>
                 </section>
                 <section class="projects" id="projects-section" style="margin-top: 10%;">
                     <div class="projects-scroll-container ">
@@ -263,7 +436,7 @@
 
                 <!-- Шаблоны для проектов -->
                 <template id="project-1-template">
-                    <div class="down df column-dir gap-32 " >
+                    <div class="down df column-dir gap-32 ">
                         <h6>ТИШИНА В БЕТОНЕ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -310,7 +483,7 @@
                 </template>
 
                 <template id="project-2-template">
-                    <div class="down df column-dir gap-32"  >
+                    <div class="down df column-dir gap-32">
                         <h6>ЛУЧИ ПАМЯТИ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -357,7 +530,7 @@
                 </template>
 
                 <template id="project-3-template">
-                    <div class="down df column-dir gap-32" >
+                    <div class="down df column-dir gap-32">
                         <h6>ПЛАСТИКА СВЕТА</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -404,7 +577,7 @@
                 </template>
 
                 <template id="project-4-template">
-                    <div class="down df column-dir gap-32" >
+                    <div class="down df column-dir gap-32">
                         <h6>МЕЖДУ ОКНАМИ И НЕБОМ</h6>
                         <div class="df gap-16">
                             <div class="w-100 df column-dir gap-8">
@@ -716,79 +889,80 @@
                 </section>
                 <section class="footer">
                     <footer class="bg-green">
-                    <div class="df column-dir py-64 container-32 gap-48">
-                        <div class="col-4 df column-dir gap-24">
-                            <h6 class="text-bwhite">Подписаться</h6>
-                            <form class="df column-dir email-subscription">
-                                <div class=" df jcsb text-bwhite">
-                                    <label for="email" class="caption">Введите ваш E-mail</label>
-                                    <button type="submit" class="arrow-button" aria-label="Отправить email">
-                                        <img src="./assets/images/Arrow/Arrow_Up_Right_SM.svg" alt="" class="arrow">
-                                    </button>
-                                </div>
-                                <input type="email" id="email" name="email" required
-                                    class=" input-wrapper bg-green text-bwhite" placeholder="">
-                            </form>
-                        </div>
-                        <div class="logo df column-dir">
-                            <div class="w-100 ">
-                                <img src="./assets/images/logo_bwhite.svg" alt="" class="w-100">
+                        <div class="df column-dir py-64 container-32 gap-48">
+                            <div class="col-4 df column-dir gap-24">
+                                <h6 class="text-bwhite">Подписаться</h6>
+                                <form class="df column-dir email-subscription">
+                                    <div class=" df jcsb text-bwhite">
+                                        <label for="email" class="caption">Введите ваш E-mail</label>
+                                        <button type="submit" class="arrow-button" aria-label="Отправить email">
+                                            <img src="./assets/images/Arrow/Arrow_Up_Right_SM.svg" alt="" class="arrow">
+                                        </button>
+                                    </div>
+                                    <input type="email" id="email" name="email" required
+                                        class=" input-wrapper bg-green text-bwhite" placeholder="">
+                                </form>
                             </div>
+                            <div class="logo df column-dir">
+                                <div class="w-100 ">
+                                    <img src="./assets/images/logo_bwhite.svg" alt="" class="w-100">
+                                </div>
 
-                        </div>
-                        <div class="df text-bwhite gap-32 w-100">
+                            </div>
+                            <div class="df text-bwhite gap-32 w-100">
+                                <div class="col-6">
+                                    <h6>Studio</h6>
+                                </div>
+                                <div class="col-4">
+                                    <h6>of</h6>
+                                </div>
+                                <div class="w-100 d-flex justify-content-end ">
+                                    <h6 class="text-end">light</h6>
+                                </div>
+                            </div>
+                            <div class="separate w-100 bg-gray">
+                            </div>
+                            <div class="df gap-32">
+                                <div class="col-6 df column-dir gap-24">
+                                    <div class="df column-dir gap-8">
+                                        <div class="caption text-gray">E-mail</div>
+                                        <p class="text-bwhite">info@luminat.com</p>
+                                    </div>
+                                    <div class="df column-dir gap-8">
+                                        <div class="caption text-gray">Адрес</div>
+                                        <p class="text-bwhite">60300 Большая Покровская улица, 3, <br> Нижний Новгород
+                                        </p>
+                                    </div>
+                                    <div class="df column-dir w-100 gap-8">
+                                        <div class="caption text-gray">Телефон</div>
+                                        <p class="text-bwhite">+7 987 654 32 10</p>
+                                    </div>
+                                </div>
+                                <div class="col-4 df column-dir  ">
+                                    <a href="#" class="btn-link-bwhite-sec">Главная</a>
+                                    <a href="#" class="btn-link-bwhite-sec">Каталог</a>
+                                    <a href="#" class="btn-link-bwhite-sec">О студии</a>
+                                    <a href="#" class="btn-link-bwhite-sec">Партнерам</a>
+                                    <a href="#" class="btn-link-bwhite-sec">Политика конфиденциальности</a>
+                                    <a href="#" class="btn-link-bwhite-sec">Обработка персональных данных</a>
+                                </div>
+                                <div class="w-100 df column-dir gap-12 jce aie">
+                                    <a href="" class=""><img src="./assets/images/Pinterest Fill.svg" alt=""></a>
+                                    <a href="" class=""><img src="./assets/images/Tiktok Fill.svg" alt=""></a>
+                                    <a href="" class=""><img src="./assets/images/Telegram Fill.svg" alt=""></a>
+                                    <a href="" class=""><img src="./assets/images/Whatsapp Fill.svg" alt=""></a>
+                                    <a href="" class=""><img src="./assets/images/VK Fill.svg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="separate w-100 bg-gray">
+                            </div>
                             <div class="col-6">
-                                <h6>Studio</h6>
-                            </div>
-                            <div class="col-4">
-                                <h6>of</h6>
-                            </div>
-                            <div class="w-100 d-flex justify-content-end ">
-                                <h6 class="text-end">light</h6>
+                                <p class="text-bwhite">
+                                    © 2025 «LUMINAT» - интернет-магазин люстр и светильников
+                                </p>
                             </div>
                         </div>
-                        <div class="separate w-100 bg-gray">
-                        </div>
-                        <div class="df gap-32">
-                            <div class="col-6 df column-dir gap-24">
-                                <div class="df column-dir gap-8">
-                                    <div class="caption text-gray">E-mail</div>
-                                    <p class="text-bwhite">info@luminat.com</p>
-                                </div>
-                                <div class="df column-dir gap-8">
-                                    <div class="caption text-gray">Адрес</div>
-                                    <p class="text-bwhite">60300 Большая Покровская улица, 3, <br> Нижний Новгород</p>
-                                </div>
-                                <div class="df column-dir w-100 gap-8">
-                                    <div class="caption text-gray">Телефон</div>
-                                    <p class="text-bwhite">+7 987 654 32 10</p>
-                                </div>
-                            </div>
-                            <div class="col-4 df column-dir  ">
-                                <a href="#" class="btn-link-bwhite-sec">Главная</a>
-                                <a href="#" class="btn-link-bwhite-sec">Каталог</a>
-                                <a href="#" class="btn-link-bwhite-sec">О студии</a>
-                                <a href="#" class="btn-link-bwhite-sec">Партнерам</a>
-                                <a href="#" class="btn-link-bwhite-sec">Политика конфиденциальности</a>
-                                <a href="#" class="btn-link-bwhite-sec">Обработка персональных данных</a>
-                            </div>
-                            <div class="w-100 df column-dir gap-12 jce aie">
-                                <a href="" class=""><img src="./assets/images/Pinterest Fill.svg" alt=""></a>
-                                <a href="" class=""><img src="./assets/images/Tiktok Fill.svg" alt=""></a>
-                                <a href="" class=""><img src="./assets/images/Telegram Fill.svg" alt=""></a>
-                                <a href="" class=""><img src="./assets/images/Whatsapp Fill.svg" alt=""></a>
-                                <a href="" class=""><img src="./assets/images/VK Fill.svg" alt=""></a>
-                            </div>
-                        </div>
-                        <div class="separate w-100 bg-gray">
-                        </div>
-                        <div class="col-6">
-                            <p class="text-bwhite">
-                                © 2025 «LUMINAT» - интернет-магазин люстр и светильников
-                            </p>
-                        </div>
-                    </div>
-                </footer>
+                    </footer>
                 </section>
             </main>
         </div>
@@ -808,6 +982,7 @@
     <script src="./assets/js/faq.js"></script>
     <script src="./assets/js/map.js"></script>
     <script src="./assets/js/header.js"></script>
+
     <!-- после всех остальных скриптов -->
 
     <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш_настоящий_API_ключ&lang=ru_RU"></script>

@@ -589,7 +589,7 @@ footer .separate {
 /* ... */
 
 
-section.sort .dropdown-menu {
+.sort-item .dropdown-menu {
   font-size: var(--font-size-base);
   background-color: var(--color-bwhite);
   --bs-dropdown-link-active-bg: #40423D !important;
@@ -777,34 +777,37 @@ section.connection .input-wrapper {
 /* Разрешить скролл внутри секции проектов */
 #projects-section {
   overflow-y: auto;
-  overscroll-behavior: contain; /* Предотвратить скролл родителя */
+  overscroll-behavior: contain;
+  /* Предотвратить скролл родителя */
 }
 
 /* Отключить скролл для остальных секций */
-section:not(#projects-section) {
+/* section:not(#projects-section) {
   overflow: hidden;
-}
+} */
 
 
 
 
 .project-item {
-    opacity: 0;
-    transition: opacity 0.5s ease, transform 0.5s ease;
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
+
 .project-item.active {
-    opacity: 1;
-    z-index: 10;
+  opacity: 1;
+  z-index: 10;
 }
+
 .project-item.past {
-    opacity: 0.5;
-    transform: translateY(-20px);
+  opacity: 0.5;
+  transform: translateY(-20px);
 }
 
 .header-hidden {
-    transform: translateY(-100%);
-    transition: transform 0.3s ease;
-    will-change: transform;
+  transform: translateY(-100%);
+  transition: transform 0.3s ease;
+  will-change: transform;
 }
 
 
@@ -816,3 +819,118 @@ section:not(#projects-section) {
   border-bottom-color: transparent !important;
   transform: none !important;
 } */
+
+.dotted-underline {
+  border-bottom: 2px dotted;
+  /* Точечное подчёркивание */
+  padding-bottom: 2px;
+  /* Отступ для красоты */
+  width: fit-content;
+
+}
+
+/* Основная сетка каталога (1 колонка фильтров + 5 колонок товаров) */
+section.fav .catalog-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  /* Соотношение 1:5 */
+  gap: 2rem;
+}
+
+/* Сетка товаров (5 колонок) */
+section.fav .products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+
+section.cart .modal {
+  display: none;
+  /* Скрыто по умолчанию */
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  overflow: hidden;
+}
+
+section.cart .modal-content {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100vh;
+  background: var(--color-bwhite);
+  overflow-y: auto;
+  box-shadow: -4px 0 16px rgba(0, 0, 0, 0.1);
+  border-radius: 0 !important;
+
+}
+
+.close {
+  cursor: pointer;
+}
+
+.border-bottom-green {
+  border-bottom: 1px solid var(--color-green);
+}
+
+.input-info {
+  height: 4rem;
+  border: none;
+  padding: 1rem;
+}
+
+.input-promo {
+  height: 4rem;
+  border: 1px solid var(--color-green);
+  padding: 1rem;
+}
+
+.personal-info {
+  position: relative;
+  min-height: calc(100vh - 120px);
+  /* Учитываем высоту шапки */
+}
+
+.personal-info .col-7 {
+  /* Отступ от правой колонки */
+  height: calc(100vh - 120px);
+  /* Фиксированная высота */
+  overflow-y: auto;
+  /* Включаем скролл */
+  scrollbar-width: none;
+  /* Тонкий скроллбар */
+}
+
+.personal-info .col-7::-webkit-scrollbar {
+  width: 4px;
+  /* Ширина скроллбара */
+}
+
+.personal-info .col-7::-webkit-scrollbar-thumb {
+  background-color: var(--color-green);
+  /* Цвет скроллбара */
+}
+
+.personal-info .col-5 {
+  position: sticky;
+  top: 120px;
+  /* Высота шапки */
+  height: calc(100vh - 120px);
+  /* Фиксированная высота */
+  align-self: flex-start;
+  /* Выравнивание по верху */
+}
+
+.order-info {
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+}

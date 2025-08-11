@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Избранное</title>
+    <link rel="stylesheet" href="./assets/styles/reset.css">
+    <link rel="stylesheet" href="./assets/styles/utility.css">
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/spasing.css">
+    <link rel="stylesheet" href="./assets/styles/spasing.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+</head>
+
+<body class="bg-bwhite">
+    <main>
+        <header class="pl-4 pr-4 py-24 border-bottom d-flex aic jcb bg-bwhite">
+            <div class="container-fluid container-32">
+                <div class="row align-items-center gx-32">
+
+                    <!-- Левая часть (1-6 колонки) -->
+                    <div class="col-6 d-flex align-items-center d-flex aic ">
+                        <a href="#" class="text-decoration-none text-green">
+                            <p>2025</p>
+                        </a>
+                    </div>
+
+                    <!-- Центральная часть (7-10 колонки) -->
+                    <div class="col-4 d-flex align-items-center gap-32">
+                        <nav class="d-flex align-items-center gap-32 ml-16">
+                            <a href="./index.html" class="btn-link-green-sec">
+                                <p>Главная</p>
+                            </a>
+                            <a href="./catalog.html" class="btn-link-green-sec">
+                                <p>Каталог</p>
+                            </a>
+                            <a href="./about.html" class="btn-link-green-sec">
+                                <p>О студии</p>
+                            </a>
+                            <a href="#" class="btn-link-green-sec">
+                                <p>Партнёрам</p>
+                            </a>
+                        </nav>
+                    </div>
+
+                    <!-- Правая часть (11-12 колонки) -->
+                    <div class="col-2 d-flex justify-content-end gap-3">
+                        <a href="./favorites.html">
+                            <img class="icon-md" src="./assets/images/Heart_01.svg" alt="">
+                        </a>
+                        <a href="./favorites.html" id="openModal">
+                            <img class="icon-md" src="./assets/images/Shopping_Cart_02.svg" alt="">
+                        </a>
+                        <a href="./profile.html">
+                            <img class="icon-md" src="./assets/images/User_02.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section class="cart">
+            <div id="modal" class="modal ">
+                <div class="modal-content bg-bwhite px-32">
+                    <div class="modal-header df jcsb mt-32 pb-24">
+                        <h2 class="text-green">Корзина</h2>
+                        <span class="close btn-green-sec px-16">Закрыть</span>
+                    </div>
+
+                    <div class="modal-body df my-32 gap-32  column-dir">
+                        <div class="df gap-32 jcsb order cart-item">
+                            <div class="df gap-32">
+                                <div class="col-4">
+                                    <img src="./assets/images/Blurglass.webp" alt="" class="responsive-img-1-1">
+                                </div>
+                                <div class="df column-dir jcsb py-16">
+                                    <div class="df column-dir gap gap-16">
+                                        <h6 class="text-green">Blur</h6>
+                                        <div class="df column-dir gap-8">
+                                            <div class="caption text-bw-7">It is a long established fact that a reader
+                                                will be distracted by the readable</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-green">12 000₽</h6>
+                                </div>
+                            </div>
+
+                            <div class=" df   mr-32 right jcsb py-16 aie">
+                                <div class="df column-dir jcsb aie">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="df gap-8 aic">
+                                        <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                        <h6 class="text-green">1</h6>
+                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="df gap-32 jcsb order cart-item">
+                            <div class="df gap-32">
+                                <div class="col-4">
+                                    <img src="./assets/images/Fossil.webp" alt="" class="responsive-img-1-1">
+                                </div>
+                                <div class="df column-dir jcsb py-16">
+                                    <div class="df column-dir gap gap-16">
+                                        <h6 class="text-green">Fossil</h6>
+                                        <div class="df column-dir gap-8">
+                                            <div class="caption text-bw-7">It is a long established fact that a reader
+                                                will be distracted by the readable</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-green">12 000₽</h6>
+                                </div>
+                            </div>
+
+                            <div class=" df   mr-32 right jcsb py-16">
+                                <div class="df column-dir jcsb aie">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="df gap-8 aic">
+                                        <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                        <h6 class="text-green">1</h6>
+                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="df gap-32 jcsb order cart-item">
+                            <div class="df gap-32">
+                                <div class="col-4">
+                                    <img src="./assets/images/Dot.webp" alt="" class="responsive-img-1-1">
+                                </div>
+                                <div class="df column-dir jcsb py-16">
+                                    <div class="df column-dir gap gap-16">
+                                        <h6 class="text-green">Dot</h6>
+                                        <div class="df column-dir gap-8">
+                                            <div class="caption text-bw-7">It is a long established fact that a reader
+                                                will be distracted by the readable</div>
+                                        </div>
+                                    </div>
+                                    <h6 class="text-green">12 000₽</h6>
+                                </div>
+                            </div>
+
+                            <div class=" df   mr-32 right jcsb py-16">
+                                <div class="df column-dir jcsb aie">
+                                    <a href="">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
+                                                stroke="#40423D" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </a>
+                                    <div class="df gap-8 aic">
+                                        <a href="">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H20" stroke="#FFFEF7" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                        <h6 class="text-green">1</h6>
+                                        <a href=""><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                                viewBox="0 0 32 32" fill="none">
+                                                <rect width="32" height="32" fill="#40423D" />
+                                                <path d="M12 16H16M16 16H20M16 16V20M16 16V12" stroke="#FFFEF7"
+                                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="./order_personal_info.html" class="btn-green-sec"> Перейти к оформлению</a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="fav">
+            <div class="container-32 df mt-120 gap-32">
+                <div class="col-3 df column-dir gap-48">
+                    <h2 class="text-green">Избранное</h2>
+                    <div class="df column-dir gap-32">
+                        <a href="./profile.html" class="btn-link-gray-sec">
+                            <p>Профиль</p>
+                        </a>
+                        <a href="./orders.html" class="btn-link-gray-sec">
+                            <p>Мои заказы</p>
+                        </a>
+                        <a href="./favorites.html" class="btn-link-green-sec">
+                            <p>Избранное</p>
+                        </a>
+                        <a href="#" class="btn-link-gray-sec">
+                            <p>Обратная связь</p>
+                        </a>
+                        <a href="#" class="btn-link-gray-sec">
+                            <p>Выход</p>
+                        </a>
+                    </div>
+                </div>
+                <div class=" catalog">
+                    <div class=" products-grid soft-modern">
+
+                        <!-- Oval.001 -->
+                        <div class="product-item df column-dir gap-12">
+                            <div class="product-image-wrapper relative df jce">
+                                <img src="./assets/images/Oval.001.webp" alt="" class="responsive-img-3-4">
+                                <a href="#" class="like-btn absolute top-0 right-0 mt-12 mr-12">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M16 10.2589C13.3333 3.99967 4 4.66634 4 12.6664C4 20.6664 16 27.3333 16 27.3333C16 27.3333 28 20.6664 28 12.6664C28 4.66634 18.6667 3.99967 16 10.2589Z"
+                                            stroke="#FFFEF7" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="df jcsb">
+                                <h6 class="text-green">Oval.001</h6>
+                                <h6 class="text-green text-end">12 000₽</h6>
+                            </div>
+                            <div class="to-cart text-end">
+                                <a href="#" class="btn-link-green-sec">В корзину→</a>
+                            </div>
+                        </div>
+
+                        <!-- Fold -->
+                        <div class="product-item df column-dir gap-12">
+                            <div class="product-image-wrapper relative df jce">
+                                <img src="./assets/images/Fold.webp" alt="" class="responsive-img-3-4">
+                                <a href="#" class="like-btn absolute top-0 right-0 mt-12 mr-12">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M16 10.2589C13.3333 3.99967 4 4.66634 4 12.6664C4 20.6664 16 27.3333 16 27.3333C16 27.3333 28 20.6664 28 12.6664C28 4.66634 18.6667 3.99967 16 10.2589Z"
+                                            stroke="#FFFEF7" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="df jcsb">
+                                <h6 class="text-green">Fold</h6>
+                                <h6 class="text-green text-end">23 000₽</h6>
+                            </div>
+                            <div class="to-cart text-end">
+                                <a href="#" class="btn-link-green-sec">В корзину→</a>
+                            </div>
+                        </div>
+                        <div class="product-item  df column-dir gap-12 ">
+                            <div class="product-image-wrapper relative df jce">
+                                <img src="./assets/images/Flux.webp" alt="" class="responsive-img-3-4">
+                                <a href="#" class="like-btn absolute top-0 right-0 mt-12 mr-12">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                        fill="none">
+                                        <path
+                                            d="M16 10.2589C13.3333 3.99967 4 4.66634 4 12.6664C4 20.6664 16 27.3333 16 27.3333C16 27.3333 28 20.6664 28 12.6664C28 4.66634 18.6667 3.99967 16 10.2589Z"
+                                            stroke="#FFFEF7" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="df jcsb">
+                                <h6 class="text-green">
+                                    Flux
+                                </h6>
+                                <h6 class="text-green text-end">
+                                    12 000₽
+                                </h6>
+                            </div>
+                            <div class="to-cart text-end"> <a href="#" class="btn-link-green-sec ">В корзину→</a>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.getElementById("openModal").addEventListener("click", function (e) {
+            e.preventDefault();
+            document.getElementById("modal").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function () {
+            document.getElementById("modal").style.display = "none";
+        });
+
+        window.addEventListener("click", function (event) {
+            const modal = document.getElementById("modal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
